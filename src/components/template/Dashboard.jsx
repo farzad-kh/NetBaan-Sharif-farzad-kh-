@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import getData from "../../services/api.client";
 import AssetsCard from "../module/AssetsCard";
 import AssetTableContainer from "../module/AssetTableContainer";
+import Loading from "../loading/Loading";
 
 const Dashboard = () => {
   const [data, setData] = useState([]);
@@ -24,13 +25,10 @@ const Dashboard = () => {
     setAssetValue(value);
   };
 
-  if (isLoading)
-    // Showing loading spinner
-    return (
-      <div className="flex justify-center w-full h-[100vh]">
-        <span class="loader"></span>
-      </div>
-    );
+  // Showing loading spinner
+  if (isLoading) return <Loading/>
+    
+      
 
   return (
     <div className="w-full flex justify-center">
