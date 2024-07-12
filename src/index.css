@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: #1a1a1a;
+
+}
+
+table thead tr th {
+    padding: 16px;
+    /* background-color: #28282a; */
+    background-color: #1D2229
+}
+
+.bg-odd tr:nth-child(even) {
+    background-color: #262d3c;
+}
+
+table tbody tr:first-child td {
+    border-top: 6px solid #1a1a1a;
+
+}
+
+table tbody tr {
+    border-radius: 6px;
+    overflow: hidden;
+    text-align: center;
+}
+
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #FFF;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    align-self: center;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
