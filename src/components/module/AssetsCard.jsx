@@ -3,11 +3,10 @@ import React from "react";
 import { GoArrowUpRight } from "react-icons/go";
 import Logo from "../../assets/assetsLogo/index";
 
- 
 import AssetsMonitoring from "./AssetsMonitoring";
 import AssetsInfo from "./AssetsInfo";
 const AssetsCard = ({ data, label, filterAssets }) => {
-  const { ips, ports, total, total_live, total_monitored, vulns } = data || {};
+  const { ips, ports, total, live, monitored, vulns } = data || {};
 
   //    background-color changing based on the value of label
   const logoBg =
@@ -44,11 +43,11 @@ const AssetsCard = ({ data, label, filterAssets }) => {
         <h3 className="text-left  font-bold mb-[6px]">{label}</h3>
         <span className="h-[1px] w-full bg-slate-100 mb-8"></span>
         <AssetsMonitoring
-          totalLive={total_live}
-          totalMonitored={total_monitored}
+          live={live}
+          monitored={monitored}
         />
         <span className="h-[1px] w-full bg-slate-100 mb-8"></span>
-       <AssetsInfo ips={ips} ports={ports} vulns={vulns} />
+        <AssetsInfo ips={ips} ports={ports} vulns={vulns} />
       </div>
     </div>
   );
