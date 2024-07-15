@@ -6,7 +6,7 @@ import Logo from "../../assets/assetsLogo/index";
 import AssetsMonitoring from "./AssetsMonitoring";
 import AssetsInfo from "./AssetsInfo";
 const AssetsCard = ({ data, label, filterAssets }) => {
-  const { ips, ports, total, live, monitored, vulns } = data || {};
+  const { ips, ports, total, live, monitored, vulns,total_live,total_monitored } = data || {};
 
   //    background-color changing based on the value of label
   const logoBg =
@@ -45,6 +45,7 @@ const AssetsCard = ({ data, label, filterAssets }) => {
         <AssetsMonitoring
           live={live}
           monitored={monitored}
+          total={{total_live,total_monitored}}
         />
         <span className="h-[1px] w-full bg-slate-100 mb-8"></span>
         <AssetsInfo ips={ips} ports={ports} vulns={vulns} />
